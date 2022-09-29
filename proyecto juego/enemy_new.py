@@ -1,5 +1,8 @@
+import random
+
+
 class Enemy:
-    def __init__(self, name, age, strength, agi, con, race, damage):
+    def __init__(self, name, age, strength, agi, con, race, damage, exp_min, exp_max):
         self.name = name
         self.age = age
         self.strength = strength
@@ -8,6 +11,8 @@ class Enemy:
         self.race = race
         self.damage = damage
         self.dead = False
+        self.exp_min = exp_min
+        self.exp_max = exp_max
 
     def damage_recived(self, damage):
         self.con -= damage
@@ -26,3 +31,7 @@ class Enemy:
         elif sum_dice == 12:
             self.damage += 5
         return self.damage
+
+    def give_exp(self):
+        return random.randint(self.exp_min, self.exp_max)
+
