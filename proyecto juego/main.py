@@ -12,7 +12,7 @@ enemy_control = [
     Enemy("wonder woman", 16, 7, 3, 50, "orc", 2, 100, 200),
     Enemy("catwoman", 16, 7, 3, 50, "orc", 2, 100, 200),
     Enemy("harley quinn", 16, 7, 3, 50, "orc", 2, 100, 200),
-    Enemy("constantine", 16, 7, 3, 50, "orc", 2, 100, 200)
+    Enemy("constantine", 16, 7, 3, 50, "orc", 2, 100, 400)
 ]
 character_control = []
 character_selected_for_combat = ''
