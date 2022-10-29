@@ -1,5 +1,6 @@
 import time
 
+
 def crear_cuenta():
     def pasword():
         while True:
@@ -18,6 +19,7 @@ def crear_cuenta():
                 return user
             else:
                 print("your user no esta disponible, ingrese uno nuevamente")
+
     datos_iniciales = [user(), pasword()]
     print("Creando cuenta......")
     time.sleep(2.5)

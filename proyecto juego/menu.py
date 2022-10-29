@@ -1,45 +1,59 @@
 import random
 from character_new import Character
+from constants import *
 
 
 def select_amount_character():
     while True:
-        amount = int(input("How many characters do you want to add(max 3): "))
-        if amount > 3 or amount <= 0:
-            print("Only 3 characters maximum allowed and it can't be 0")
-        else:
-            return amount
+        try:
+            amount = int(input(CHAR_AMOU))
 
+            if amount > 3 or amount <= 0:
+                print(CHAR_AMOUN_ERR)
+            else:
+                return amount
+        except:
+            pass
 
 def select_race():
     while True:
-        print(
-            "Enter the type of character you want to choose:\n "
-            " 1:Orc:the orc will have 2 points more strength\n "
-            " 2:Elf:the elf will have 2 points more agility\n "
-            " 3:Human:the human will have 2 points more constitution ")
-        race = int(input("your option: "))
-        if race != 0 or race < 0 or race >= 4:
-            print("your option is not in the options")
-        else:
+        try:
+            print(TYPES_CHAR)
+            race = int(input(CHOICE))
+            if race == 0 or race < 0 or race >= 4:
+                print(CHOICE_ERR)
+            else:
+                break
+        except:
+            pass
+
+    while True:
+        try:
+            name = str(input(CHAR_NAME))
+            age = int(input(CHAR_AGE))
             break
-    name = str(input("Enter character name: "))
-    age = int(input("Enter character age:"))
-    print("the sum of strength, life and agility must give 15 and none can be worth 0")
-    sum = 0
-    while sum != 15:
-        strength = int(input("Enter character strength :"))
-        sum_1 = 15 - strength
-        print("you have", sum_1, "available values left")
-        agi = int(input("Enter character agi :"))
-        sum_1 = 15 - (strength + agi)
-        print("you have", sum_1, "available values left")
-        con = int(input("Enter character con:"))
-        sum = strength + agi + con
-        if sum == 15:
-            break
-        else:
-            print("THE SUM OF THE VALUES IS NOT 15, ENTER THE VALUES AGAIN")
+        except:
+            pass
+
+    print(SUM_ATTRIBS)
+
+    while True:
+        try:
+            strength = int(input(CHAR_STR))
+            sum_1 = 15 - strength
+            print(YOU_HAVE, sum_1, POINTS_LEFT)
+            agi = int(input(CHAR_AGI))
+            sum_1 = 15 - (strength + agi)
+            print(YOU_HAVE, sum_1, POINTS_LEFT)
+            con = int(input(CHAR_CONS))
+            sum = strength + agi + con
+            if sum == 15:
+                break
+            else:
+                print(SUM_ERR)
+
+        except:
+            pass
 
     if race == 1:
         strength = strength + 2
@@ -107,3 +121,14 @@ def dice():
     nums_2 = random.randint(1, 6)
     sum_number = nums_1 + nums_2
     return sum_number
+
+
+def check_inventory(inventory):
+    print("Your inventory:\n")
+    count = 1
+    for i in inventory:
+        print(f"{count}: , Potion: {i.name}, up healt: {i.con}")
+        count += 1
+
+    option_selected = int(input("Seleccione la pocion que desea utiliar, 0 si no: "))
+    return option_selected - 1

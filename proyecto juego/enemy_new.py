@@ -14,7 +14,7 @@ class Enemy:
         self.exp_min = exp_min
         self.exp_max = exp_max
 
-    def damage_recived(self, damage):
+    def damage_received(self, damage):
         self.con -= damage
         if self.con <= 0:
             self.dead = True
