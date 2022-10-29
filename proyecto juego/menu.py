@@ -12,13 +12,17 @@ def select_amount_character():
 
 
 def select_race():
-    print(
-        "Enter the type of character you want to choose:\n "
-        " 1:Orc:the orc will have 2 points more strength\n "
-        " 2:Elf:the elf will have 2 points more agility\n "
-        " 3:Human:the human will have 2 points more constitution ")
-
-    race = int(input("your option: "))
+    while True:
+        print(
+            "Enter the type of character you want to choose:\n "
+            " 1:Orc:the orc will have 2 points more strength\n "
+            " 2:Elf:the elf will have 2 points more agility\n "
+            " 3:Human:the human will have 2 points more constitution ")
+        race = int(input("your option: "))
+        if race != 0 or race < 0 or race >= 4:
+            print("your option is not in the options")
+        else:
+            break
     name = str(input("Enter character name: "))
     age = int(input("Enter character age:"))
     print("the sum of strength, life and agility must give 15 and none can be worth 0")

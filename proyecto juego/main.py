@@ -1,6 +1,5 @@
 from menu import select_amount_character, select_race, select_character, remove_character, dice
 from enemy_new import Enemy
-from login import login, crear_cuenta, comprobar_datos
 
 enemy_control = [
     Enemy("batman", 16, 7, 3, 50, "orc", 2, 100, 200),
@@ -17,22 +16,6 @@ enemy_control = [
 character_control = []
 character_selected_for_combat = ''
 print("\033[;36m" + "")
-"""#ingresar o crear cuenta
-while True:
-    print("1:Crear cuenta: \n2:Ingresar a su cuenta:")
-    option = int(input("your option: "))
-    if option == 1:
-        crear_cuenta()
-        break
-    elif option == 2:
-        while True:
-            datos_ingresados = login()
-            datos= comprobar_datos(datos_ingresados, crear_cuenta())
-            if datos == True:
-                break
-        break
-    else:
-        print("su opcion no existe, ingresela nuevamente\n")"""
 # cantidad de personajes
 amount = select_amount_character()
 
